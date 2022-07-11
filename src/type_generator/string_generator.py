@@ -1,4 +1,3 @@
-from ast import arg
 import random
 import string
 
@@ -33,5 +32,4 @@ class CharType(StringAndCharType):
         self.config = config
 
     def generate(self, **kwargs):
-        print("in char")
         return list(map(self._string_generate,[1]*self.config.record_count))

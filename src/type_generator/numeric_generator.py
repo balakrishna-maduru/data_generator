@@ -1,6 +1,6 @@
 import numpy as np
-from src.data_generator.config import Config
 
+from src.data_generator.config import Config
 
 class BaseType:
 
@@ -37,7 +37,3 @@ class FloatType(BaseType):
         return np.random.uniform(kwargs.get("low", self.config.low),
                                  kwargs.get("high", self.config.high),
                                  kwargs.get("record_count", self.config.record_count))
-
-if __name__ == "__main__":
-    config = Config()
-    it = IntegerType(config)

@@ -1,9 +1,9 @@
-from datetime import datetime
-from unicodedata import decimal
 import unittest
-from src.type_generator.date_time_generator import DateType, TimestampType
+from datetime import date, datetime
+
 from src.data_generator.config import Config
-from datetime import date
+from src.type_generator.date_time_generator import DateType, TimestampType
+
 
 class TestDateAndTimeType(unittest.TestCase):
 

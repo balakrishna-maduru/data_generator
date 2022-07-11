@@ -1,7 +1,8 @@
 import unittest
-from xmlrpc.client import boolean
-from src.type_generator.string_generator import StringType, CharType
+
 from src.data_generator.config import Config
+from src.type_generator.string_generator import CharType, StringType
+
 
 class TestStringGenerator(unittest.TestCase):
 

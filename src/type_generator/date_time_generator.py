@@ -1,6 +1,6 @@
-import imp
-from random import randrange
 from datetime import datetime, timedelta
+from random import randrange
+
 from src.data_generator.config import Config
 
 

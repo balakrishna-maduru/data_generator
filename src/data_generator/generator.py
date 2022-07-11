@@ -1,6 +1,3 @@
-# Python program to illustrate the concept
-# of threading
-# importing the threading module
 import threading
 
 from src.data_generator.config import Config

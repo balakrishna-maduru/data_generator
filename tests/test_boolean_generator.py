@@ -1,8 +1,10 @@
-import numpy as np
 import unittest
-from xmlrpc.client import boolean
-from src.type_generator.boolean_generator import BooleanType
+
+import numpy as np
+
 from src.data_generator.config import Config
+from src.type_generator.boolean_generator import BooleanType
+
 
 class TestBooleanType(unittest.TestCase):
 
