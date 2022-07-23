@@ -11,7 +11,7 @@ class TestDataSelector(unittest.TestCase):
         pass
 
     def test_data_selector_int(self):
-        row = [int, int]
+        row = [int] * 2
         data = [1,2,3,4,5]
         data_selector = DataSelector()
         data = data_selector.select(data, 2)
@@ -44,3 +44,4 @@ class TestDataSelector(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+    
