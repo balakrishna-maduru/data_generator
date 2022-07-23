@@ -40,7 +40,7 @@ class TestDateGenerator(unittest.TestCase):
                'region': np.str_}
                
         rdg = Generator()
-        data = rdg.collect(self.schema)
+        data = rdg.generate(self.schema)
         row_dt = {}
         for key, value in data.items():
             row_dt[key] = type(value[0])
@@ -57,7 +57,7 @@ class TestDateGenerator(unittest.TestCase):
                'date_of_birth': [date]  * 2,
                'region': [np.str_] * 2}
         rdg = Generator()
-        data = rdg.collect(self.schema)
+        data = rdg.generate(self.schema)
         row_dt = {}
         for key, value in data.items():
             row_dt[key] = [type(v) for v in value]
