@@ -3,6 +3,8 @@ class _Config:
 
     def __init__(self) -> None:
         self.__dict__ = self.shares_data
+        self.process_handler = 'multiprocess'
+        self.process_count = 2
         self.record_count = 1
         self.round = 2
         self.low = 0

@@ -69,6 +69,12 @@ class TestDateGenerator(unittest.TestCase):
         df = rdg.get_df(self.schema)
         assert isinstance(df,pd.DataFrame)
 
+    def test_get_df_using_thread(self):
+        self.config.record_count = 2
+        self.config.process_handler = 'thread'
+        rdg = Generator()
+        df = rdg.get_df(self.schema)
+        assert isinstance(df, pd.DataFrame)
 
 if __name__ == '__main__':
     unittest.main()
