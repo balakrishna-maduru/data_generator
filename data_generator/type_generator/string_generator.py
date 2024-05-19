@@ -1,7 +1,7 @@
 import random
 import string
 
-from src.data_generator.config import Config
+from data_generator.config import Config
 
 
 class StringAndCharType:

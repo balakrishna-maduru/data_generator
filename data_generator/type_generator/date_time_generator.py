@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from random import randrange
 
-from src.data_generator.config import Config
+from data_generator.config import Config
 
 
 class DateTime:

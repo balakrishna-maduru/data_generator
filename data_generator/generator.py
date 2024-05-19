@@ -1,7 +1,7 @@
 import pandas as pd
 
-from src.data_generator.config import Config
-from src.data_generator.process_handler import ProcessHandler
+from data_generator.config import Config
+from data_generator.process_handler import ProcessHandler
 
 
 class Generator:
