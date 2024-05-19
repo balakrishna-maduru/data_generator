@@ -1,6 +1,7 @@
-from ast import arg
 import random
 import string
+
+from src.data_generator.config import Config
 
 
 class StringAndCharType:
@@ -18,16 +19,17 @@ class StringAndCharType:
 
 
 class StringType(StringAndCharType):
-    def __init__(self) -> None:
+    def __init__(self, config: Config) -> None:
         super().__init__()
-
-    def generate(self, *args):
-        args = args[0]
-        return self._string_generate(args.get("size"))
+        self.config = config
+        
+    def generate(self, **kwargs):
+        return list(map(self._string_generate,[kwargs.get("size",1)]*self.config.record_count))
 
 class CharType(StringAndCharType):
-    def __init__(self) -> None:
+    def __init__(self, config: Config) -> None:
         super().__init__()
+        self.config = config
 
-    def generate(self, *args):
-        return self._string_generate(size=1)
+    def generate(self, **kwargs):
+        return list(map(self._string_generate,[1]*self.config.record_count))

@@ -1,34 +1,39 @@
-import random
-import string
+import numpy as np
 
-class IntegerType:
-    
-    def __init__(self, *args, **kwargs) -> None:
+from src.data_generator.config import Config
+
+class BaseType:
+
+    def __init__(self) -> None:
         pass
 
-    def _integer_range_generator(self, range):
-        return random.randint(range[0],range[1])
+    def _get_low_high(self, size):
+        self.config.low = int('1'+''.join(["0" for _ in range(size-1)]))
+        self.config.high = int(''.join(['9' for _ in range(size)]))
 
-    def _integer_size_generator(self, size):
-        return int(''.join(random.choices(string.digits, k=size)))
 
-    def generate(self, *args, **kwargs):
-        args = args[0]
-        key = "size" if 'size' in args else "range"
-        return getattr(self, f"_integer_{key}_generator")(args[key])
+class IntegerType(BaseType):
 
-class DecimalType:
-    def __init__(self, *args, **kwargs) -> None:
-        pass
+    def __init__(self, config: Config) -> None:
+        self.config = config
+        super().__init__()
 
-    def _decimal_range_generator(self, range):
-        return round(random.uniform(range[0], range[1]),range[2])
+    def generate(self, **kwargs):
+        if "size" in kwargs:
+            self._get_low_high(kwargs.get("size"))
+        return np.random.randint(kwargs.get("low", self.config.low),
+                                 kwargs.get("high", self.config.high),
+                                 kwargs.get("record_count", self.config.record_count))
 
-    def _decimal_size_generator(self, size):
-        pre = int('1'+''.join(['0' for i in range(size[1])]))
-        return int(''.join(random.choices(string.digits, k=size[0])))/pre
+class FloatType(BaseType):
 
-    def generate(self, *args, **kwargs):
-        args = args[0]
-        key = "size" if 'size' in args else "range"
-        return getattr(self, f"_decimal_{key}_generator")(args[key])
+    def __init__(self, config: Config) -> None:
+        self.config = config
+        super().__init__()
+
+    def generate(self, **kwargs):
+        if "size" in kwargs:
+            self._get_low_high(kwargs.get("size"))
+        return np.random.uniform(kwargs.get("low", self.config.low),
+                                 kwargs.get("high", self.config.high),
+                                 kwargs.get("record_count", self.config.record_count))

@@ -1,9 +1,10 @@
-import random
+import numpy as np
+from src.data_generator.config import Config
 
 class BooleanType:
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, config: Config) -> None:
+        self.config = config
 
-    def generate(self, *args):
-        return random.choice((True, False))
+    def generate(self,*args, **kwargs):
+        return np.random.randint(2, size=self.config.record_count) == 0
