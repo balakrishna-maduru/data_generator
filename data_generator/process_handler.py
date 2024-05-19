@@ -2,8 +2,8 @@ import json
 import threading
 from multiprocessing import Manager, Pool
 
-from src.data_generator.config import Config
-from src.type_generator.type_generator import TypeGenerator
+from data_generator.config import Config
+from data_generator.type_generator.type_generator import TypeGenerator
 
 
 class ProcessHandler:

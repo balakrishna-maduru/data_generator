@@ -1,5 +1,5 @@
 import numpy as np
-from src.data_generator.config import Config
+from data_generator.config import Config
 
 class BooleanType:
 

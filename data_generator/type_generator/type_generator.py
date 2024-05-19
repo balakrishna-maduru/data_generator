@@ -1,9 +1,5 @@
-from src.data_generator.config import Config
-from src.type_generator.boolean_generator import BooleanType
-from src.type_generator.numeric_generator import FloatType, IntegerType
-from src.type_generator.string_generator import StringType, CharType
-from src.type_generator.date_time_generator import TimestampType, DateType
-from src.data_generator.data_selector import DataSelector
+from data_generator.config import Config
+from data_generator.data_selector import DataSelector
 
 
 class TypeGenerator:
